@@ -4,35 +4,63 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
+#define tamanho 10
+
+void Iniciartabuleiro (int tabuleiro[tamanho][tamanho]) {
+    for (int i = 0; i < tamanho ; i++)
+    {
+        for (int j = 0; j < tamanho; j++)
+        {
+            tabuleiro[i][j] = 0; //inicializar com 0 (água)
+        }
+    }
+
+}
+
+void Imprimirtabuleiro (int tabuleiro[tamanho][tamanho]) {
+    for (int i = 0; i < tamanho ; i++)
+    {
+        for (int j = 0; j < tamanho; j++)
+        {
+            printf ("%d" , tabuleiro[i][j]); //inicializar com 0 (água)
+        }
+        printf("\n");
+    }
+
+}
+
+void Posicionarnavio (int tabuleiro[tamanho][tamanho])
+{
+    int linha, coluna;
+
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[linha +i][coluna ] = 3;
+
+    }
+}
+
 int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     
-    int tabuleiro [10][10] = {0};
+    int tabuleiro [tamanho][tamanho];
+
+   Iniciartabuleiro (tabuleiro);
+
+    Posicionarnavio(tabuleiro);
+
+    Imprimirtabuleiro(tabuleiro);
+
 
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     
-    //navio horizontal
-
-    int navio [3] = {1, 1, 1};
-    int navio_x = 2;
-    int navio_y = 3;
-
-    /*
-    //Navio na vertical
-    for (int i = 0; i < 3;i++){
-        tabuleiro[navio_pos_x+i][navio_pos_y] = navio(i);
-    }
-    //Navio na horizontal
-    for (int i = 0; i < 3;i++){
-        tabuleiro[navio_pos_x][navio_pos_y+i] = navio(i);
-    }
-    //Navio inclinado
-    for (int i = 0; i < 3;i++){
-        tabuleiro[navio_pos_x+i][navio_pos_y+i] = navio(i);
-    }
-    */
-
+    
+    
+    //posicionando navio horizontal
+    
+    
+    
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.    
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
