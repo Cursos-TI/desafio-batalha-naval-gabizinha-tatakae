@@ -12,31 +12,22 @@ void Iniciartabuleiro (int tabuleiro[tamanho][tamanho]) {
         for (int j = 0; j < tamanho; j++)
         {
             tabuleiro[i][j] = 0; //inicializar com 0 (água)
-        }
-    }
-
-}
-
-void Imprimirtabuleiro (int tabuleiro[tamanho][tamanho]) {
-    for (int i = 0; i < tamanho ; i++)
-    {
-        for (int j = 0; j < tamanho; j++)
-        {
-            printf ("%d" , tabuleiro[i][j]); //inicializar com 0 (água)
+            printf ("%d " , tabuleiro[i][j]);
         }
         printf("\n");
     }
-
 }
 
 void Posicionarnavio (int tabuleiro[tamanho][tamanho])
 {
-    int linha, coluna;
+    int navio[3] = {1, 1, 1};
+    int linha = 2;
+    int coluna = 3;
 
     for (int i = 0; i < 3; i++)
     {
-        tabuleiro[linha +i][coluna ] = 3;
-
+        tabuleiro[linha][coluna + i] = navio[i];
+        printf("%d ", navio);
     }
 }
 
@@ -46,21 +37,12 @@ int main() {
     
     int tabuleiro [tamanho][tamanho];
 
-   Iniciartabuleiro (tabuleiro);
+    Iniciartabuleiro (tabuleiro);
 
     Posicionarnavio(tabuleiro);
 
-    Imprimirtabuleiro(tabuleiro);
-
 
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    
-    
-    
-    //posicionando navio horizontal
-    
-    
-    
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.    
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
